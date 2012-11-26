@@ -10,6 +10,9 @@
     <version>1.0-SNAPSHOT</version>
     <description>TomEE Demo Application</description>
 
+    <!--
+    <finalName>${artifactId}</finalName>
+    -->
     <dependencies>
         <!-- contains the entire jee api we only use a subset of it-->
         <dependency>
@@ -29,6 +32,9 @@
     </dependencies>
 
     <build>
+
+        <finalName>${artifactId}</finalName>
+
         <plugins>
             <!--
                 start the program with mvn tomee:run and then call
@@ -41,7 +47,6 @@
                 <configuration>
                     <tomeeVersion>1.5.0</tomeeVersion>
                     <tomeeClassifier>plus</tomeeClassifier>
-                    <debug>true</debug>
                     <debugPort>5005</debugPort>
                     <webapps>
                         <webapp>com.github.werpu:tomeemaven:1.0-SNAPSHOT</webapp>
