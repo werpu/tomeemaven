@@ -10,37 +10,25 @@
         <jta-data-source>MyDataSource</jta-data-source>
         <class>com.github.werpu.tomeedemo.orm.HelloEntity</class>
 
-        <!--
-        <validation-mode>CALLBACK</validation-mode>
-        -->
+
 
         <properties>
-            <!--
-            <property name="openjpa.ConnectionProperties"
-                      value="connectionId=core"/>
-             -->
-            <!-- disable runtime instrumentation -->
-            <!--
-            <property name="openjpa.jdbc.DBDictionary" value="postgres"/>
-             -->
             <property name="openjpa.jdbc.DBDictionary" value="hsql"/>
 
             <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
 
+            <!-- disable runtime instrumentation -->
             <property name="openjpa.DynamicEnhancementAgent" value="false"/>
 
             <property name="openjpa.Log" value="DefaultLevel=WARN, Runtime=INFO, Tool=INFO, SQL=TRACE"/>
 
+            <!-- with those two settings openjpa behaves better for merge and detach -->
             <property name="openjpa.DetachState" value="loaded(DetachedStateField=true)"/>
             <property name="openjpa.Compatibility" value="IgnoreDetachedStateFieldForProxySerialization=true"/>
 
             <property name="openjpa.jdbc.MappingDefaults"
                       value="ForeignKeyDeleteAction=restrict, JoinForeignKeyDeleteAction=restrict"/>
 
-            <!-- use class per table strategy -->
-            <!--
-            <property name="openjpa.Sequence" value="class-table(Table=SEQUENCES, Increment=20, InitialValue=10000)"/>
-            -->
         </properties>
 
     </persistence-unit>
