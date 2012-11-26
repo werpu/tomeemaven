@@ -48,12 +48,6 @@
                     <tomeeVersion>1.5.0</tomeeVersion>
                     <tomeeClassifier>plus</tomeeClassifier>
                     <debugPort>5005</debugPort>
-                    <webapps>
-                        <webapp>com.github.werpu:tomeemaven:1.0-SNAPSHOT</webapp>
-                    </webapps>
-                    <libs>
-                        <org>postgresql:postgresql:9.1-901-1.jdbc4</org>
-                    </libs>
                 </configuration>
             </plugin>
 
