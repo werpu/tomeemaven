@@ -38,7 +38,7 @@
         <plugins>
             <!--
                 start the program with mvn tomee:run and then call
-                http://localhost:8080/tomeemaven-1.0-SNAPSHOT
+                http://localhost:8080/tomeemaven
              -->
             <plugin>
                 <groupId>org.apache.openejb.maven</groupId>
