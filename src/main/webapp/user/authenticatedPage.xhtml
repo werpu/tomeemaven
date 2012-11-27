@@ -22,10 +22,10 @@
       xmlns:h="http://java.sun.com/jsf/html"
         >
 <h:head>
-    <title>Autenticated page</title>
+    <title>#{msgs.auth_pagetitle}</title>
 </h:head>
 <h:body>
-    This is an authenticated page
+    #{msgs.auth_title}
     <h:form>
         Hello #{authenticatedPage.user}<br />
         <h:commandLink action="#{authenticatedPage.doLogout}" value="logout"/>

@@ -22,10 +22,10 @@
       xmlns:h="http://java.sun.com/jsf/html"
         >
 <h:head>
-    <title>Autenticated page</title>
+    <title>#{msgs.login_page}</title>
 </h:head>
 <h:body>
-    Please fill in the login data
+    #{msgs.login_title}
 
     <form method="POST" action="j_security_check">
         <input type="text" name="j_username"/>

@@ -22,13 +22,13 @@
       xmlns:h="http://java.sun.com/jsf/html"
         >
 <h:head>
-    <title>Hello World</title>
+    <title>#{msgs.hello_pagetitle}</title>
 </h:head>
 <h:body>
-    <h:outputText value="hello: #{helloView.helloWorld}"/>
+    <h:outputText value="#{msgs.hello}: #{helloView.helloWorld}"/>
     <br />
     <h:outputLink value="./user/authenticatedPage.jsf">
-        <h:outputFormat escape="false"  value="Got to a secured page (username test password  user) &gt;&gt;" />
+        <h:outputFormat escape="false"  value="#{msgs.go_secured} &gt;&gt;" />
     </h:outputLink>
 </h:body>
 </html>
