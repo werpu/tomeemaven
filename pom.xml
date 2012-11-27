@@ -22,7 +22,7 @@
             <!-- scope provided means the container delivers it -->
             <scope>provided</scope>
         </dependency>
-		<!-- hsqldb references, we start hsqldb as server -->
+        <!-- hsqldb references, we start hsqldb as server -->
         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>

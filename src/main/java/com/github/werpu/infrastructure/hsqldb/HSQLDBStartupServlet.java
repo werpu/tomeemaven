@@ -24,6 +24,7 @@ import org.hsqldb.persist.HsqlProperties;
 import org.hsqldb.server.ServerAcl;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.util.logging.Logger;
@@ -36,6 +37,7 @@ import java.util.logging.Logger;
  * use it embedded but this way we can have a look
  * into the running db
  */
+@WebServlet(urlPatterns = "/db/*", loadOnStartup = 1)
 public class HSQLDBStartupServlet extends HttpServlet
 {
     Logger log = Logger.getLogger(HSQLDBStartupServlet.class.getName()); 

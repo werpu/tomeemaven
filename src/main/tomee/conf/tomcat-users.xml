@@ -34,10 +34,12 @@
   <user username="role1" password="tomcat" roles="role1"/>
 -->
   <role rolename="tomee-admin" />
-  <role name="authenticated-user" />
+
+<role name="authenticated-user" />
+<!-- we use a new user in our standard realm for the authenticated pages -->
+<user name="test" password="user" roles="authenticated-user" />
+
   <user username="tomee" password="tomee" roles="tomee-admin,manager-gui" />
 
-  <!-- we use a new user in our standard realm for the authenticated pages -->
-  <user name="test" password="user" roles="authenticated-user" />
 </tomcat-users>
 

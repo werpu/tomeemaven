@@ -49,10 +49,4 @@ public class HelloEJB
         HelloEntity entity = (HelloEntity) query.getResultList().get(0);
         return entity.getHelloWorld();
     }
-
-    public void logHello()
-    {
-
-    }
-
 }
