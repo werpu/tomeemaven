@@ -19,6 +19,9 @@
 
 package com.github.werpu.tomeedemo.gui;
 
+import com.github.werpu.tomeedemo.service.SecuredEJB;
+
+import javax.ejb.EJB;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
@@ -36,6 +39,9 @@ import java.io.IOException;
 @RequestScoped
 public class AuthenticatedPage
 {
+    @EJB
+    SecuredEJB securedEJB;
+
     public String doLogout() {
         try
         {
@@ -58,5 +64,9 @@ public class AuthenticatedPage
     public String getUser() {
         String user = FacesContext.getCurrentInstance().getExternalContext().getRemoteUser();
         return user;
+    }
+
+    public String getHello() {
+        return securedEJB.getHelloAuthenticated();
     }
 }

@@ -27,7 +27,7 @@
 <h:body>
     #{msgs.auth_title}
     <h:form>
-        Hello #{authenticatedPage.user}<br />
+        Hello #{authenticatedPage.user}<br />#{authenticatedPage.hello}
         <h:commandLink action="#{authenticatedPage.doLogout}" value="logout"/>
     </h:form>
 </h:body>
