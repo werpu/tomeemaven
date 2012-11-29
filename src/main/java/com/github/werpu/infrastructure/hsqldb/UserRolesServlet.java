@@ -17,36 +17,29 @@
  * under the License.
  */
 
-package com.github.werpu.tomeedemo.service;
+package com.github.werpu.infrastructure.hsqldb;
 
-import com.github.werpu.tomeedemo.orm.demosimple.HelloEntity;
+import com.github.werpu.tomeedemo.service.StartupEJB;
 
-import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
+import javax.ejb.EJB;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 
 /**
  * @author Werner Punz (latest modification by $Author$)
  * @version $Revision$ $Date$
  */
-
-@Stateless
-public class HelloEJB
+@WebServlet(urlPatterns = "/db2/*", loadOnStartup = 2)
+public class UserRolesServlet extends HttpServlet
 {
-    @PersistenceContext(name = "Demo_Unit")
-    EntityManager em;
+    @EJB
+    StartupEJB startupEJB;
 
-    public String getHello()
+    @Override
+    public void init() throws ServletException
     {
-        Query query = em.createQuery("select hello from HelloEntity hello");
-        if (query.getResultList().size() == 0)
-        {
-            HelloEntity entity = new HelloEntity();
-            em.persist(entity);
-            return entity.getHelloWorld();
-        }
-        HelloEntity entity = (HelloEntity) query.getResultList().get(0);
-        return entity.getHelloWorld();
+        super.init();
+        startupEJB.createCredentials();
     }
 }

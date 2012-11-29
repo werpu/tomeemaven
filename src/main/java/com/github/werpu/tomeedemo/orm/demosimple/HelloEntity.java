@@ -17,7 +17,7 @@
  * under the License.
  */
 
-package com.github.werpu.tomeedemo.orm;
+package com.github.werpu.tomeedemo.orm.demosimple;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

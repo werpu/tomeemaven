@@ -19,7 +19,8 @@
 
 package com.github.werpu.tomeedemo.service;
 
-import com.github.werpu.tomeedemo.orm.demosimple.HelloEntity;
+import com.github.werpu.tomeedemo.orm.authentication.Role;
+import com.github.werpu.tomeedemo.orm.authentication.User;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -29,24 +30,31 @@ import javax.persistence.Query;
 /**
  * @author Werner Punz (latest modification by $Author$)
  * @version $Revision$ $Date$
+ *          <p/>
+ *          Startup EJB which starts up and prepares the
+ *          user database
  */
-
 @Stateless
-public class HelloEJB
+
+public class StartupEJB
 {
     @PersistenceContext(name = "Demo_Unit")
     EntityManager em;
 
-    public String getHello()
+    public void createCredentials()
     {
-        Query query = em.createQuery("select hello from HelloEntity hello");
+        Query query = em.createQuery("select user from User user");
         if (query.getResultList().size() == 0)
         {
-            HelloEntity entity = new HelloEntity();
-            em.persist(entity);
-            return entity.getHelloWorld();
+            User user = new User();
+            user.setUserName("test");
+            user.setPassword("user");
+            em.persist(user);
+            Role role = new Role();
+            role.setRoleName("authenticated-user");
+            role.setUserName("test");
+            em.persist(role);
         }
-        HelloEntity entity = (HelloEntity) query.getResultList().get(0);
-        return entity.getHelloWorld();
     }
+
 }

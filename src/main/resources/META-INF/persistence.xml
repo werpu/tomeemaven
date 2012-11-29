@@ -8,7 +8,11 @@
     <persistence-unit name="Demo_Unit">
         <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
         <jta-data-source>MyDataSource</jta-data-source>
-        <class>com.github.werpu.tomeedemo.orm.HelloEntity</class>
+        <class>com.github.werpu.tomeedemo.orm.demosimple.HelloEntity</class>
+
+        <!-- very simplistic authentication username and role as expected by the tomcat jdbc adapter -->
+        <class>com.github.werpu.tomeedemo.orm.authentication.User</class>
+        <class>com.github.werpu.tomeedemo.orm.authentication.Role</class>
 
         <properties>
             <property name="openjpa.jdbc.DBDictionary" value="hsql"/>

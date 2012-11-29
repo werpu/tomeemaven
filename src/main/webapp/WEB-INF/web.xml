@@ -69,7 +69,7 @@
 
 <!--
 authentication , we use browser authentication
-and the tomcat-users.xml file as authentication realm
+and the tomcat-application-users.xml file as authentication realm
 -->
 <security-constraint>
     <web-resource-collection>
@@ -83,7 +83,7 @@ and the tomcat-users.xml file as authentication realm
 
 <login-config>
     <auth-method>FORM</auth-method>
-    <realm-name>UserDatabase</realm-name>
+    <realm-name>UserDatabase2</realm-name>
     <form-login-config>
         <form-login-page>/login/login.jsf</form-login-page>
         <form-error-page>/login/error.jsf</form-error-page>
