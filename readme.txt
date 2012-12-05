@@ -8,3 +8,6 @@ You can use this program as starting point for your own programs.
 You can start the program simply by running mvn install tomee:run
 and then point your browser to: http://localhost:8080/tomeemaven/
 
+Documentation for this project can be found on:
+http://werpublogs.blogspot.co.at/2012/11/tomee-and-maven.html
+
