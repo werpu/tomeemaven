@@ -193,6 +193,7 @@
     </Resource>
     -->
     <!-- we start the db as server in our startup servlet -->
+
     <Resource id="MyDataSource" type="DataSource">
         JdbcDriver org.hsqldb.jdbcDriver
         JdbcUrl    jdbc:hsqldb:hsql://localhost:9001/testdb2
